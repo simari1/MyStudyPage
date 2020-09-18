@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Study | 個人のIT学習サイト</title>
+    <link rel="stylesheet" href="../css/destyle.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //共通パーツ読み込み
+        $(function() {
+            $("header").load("../View/Common/header.html");
+            $("footer").load("../View/Common/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <div id="wrapper">
+        <div id="main">
+            <p>
+                こちらのページでは、主にサンプルアプリを掲載しています。<br> 左のリンクからサンプルアプリに飛ぶことができます。
+            </p>
+            <p>
+                工事中<br>サンプルアプリが揃ったらもう少し見やすく整理します。
+            </p>
+
+            <ul>
+                <li class="first_child"><a href="../View/Learn/TodoApps.html">ToDoアプリ</a>
+                    <ul>
+                        <li>JavaScriptでToDoアプリを作る</li>
+                        <li>JQueryでToDoアプリを作る</li>
+                        <li>Vue.jsでToDoアプリを作る</li>
+                    </ul>
+                </li>
+                <li class="first_child"><a href="#">掲示板アプリ（未作成）</a>
+                    <ul>
+                        <li>JQueryで掲示板アプリアプリを作る</li>
+                        <li>Yue.jsで掲示板アプリアプリを作る</li>
+                    </ul>
+                </li>
+                <li class="first_child"><a href="#">チャットアプリ（未作成）</a>
+                    <ul>
+                        <li>JQueryでチャットアプリアプリを作る</li>
+                        <li>Vue.jsでチャットアプリアプリを作る</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+    </footer>
+</body>
+
+</html>

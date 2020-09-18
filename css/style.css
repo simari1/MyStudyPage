@@ -1,193 +1,116 @@
-body {
-    background-color: #fff;
-    font-family: "メイリオ"、Meiryo;
+/* ******************************
+learn.html
+******************************* */
+
+
+/* ******************************
+wrapper
+******************************* */
+
+div#wrapper {
+    width: 960px;
+    height: 1000px;
+    display: flex;
+    margin: 0 auto;
 }
 
 
 /* ******************************
-header 
+main
 ******************************* */
 
-header {
-    margin-top: 0!important;
-    width: 100%;
-    height: 250px;
-    background-color: #fff;
-    border-bottom: 1px solid #505050;
-    box-shadow: 0 3px 3px -3px #505050;
+div#main p {
+    margin: 10px 0 0 10px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-div#header_inner {
-    width: 960px;
-    height: 250px;
-    background-color: fff;
-    margin: 0 auto;
+div#main ul {
+    padding-left: 15px;
 }
 
-div#header_inner h1 {
-    font-family: 'Lato', sans-serif;
-    /* font-weight: bold; */
-    letter-spacing: 0.1em;
-    color: #333;
-}
-
-div#header_inner nav {
-    float: right;
-}
-
-div#header_inner div {
-    width: auto;
-    height: 150px;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-div nav ul {
-    display: flex;
-}
-
-div nav ul li a {
-    margin-left: 20px;
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    color: #333;
-}
-
-div nav ul li a:hover {
+div#main ul>li.first_child a {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
     text-decoration: underline;
 }
 
-
-/* ******************************
-mainimage 
-******************************* */
-
-#main_image {
-    width: 100%;
-    height: 260px;
-    margin-bottom: 80px;
-    text-align: center;
+div#main ul>li.first_child {
+    margin-bottom: 30px;
 }
 
-#main_image img {
-    width: 960px;
-    height: 260px;
+div#main ul>li.first_child ul li {
+    font-weight: initial;
+    font-size: 14px;
+    line-height: 2;
 }
 
 
 /* ******************************
-container_wrapper 
+sample app
 ******************************* */
 
-#container_wrapper {
+div#sampleapp_wrapper {
     width: 960px;
-    height: 500px;
-    display: flex;
+    height: auto;
     margin: 0 auto;
 }
 
-
-/* ******************************
-about 
-******************************* */
-
-#about {
-    width: 50%;
+div.sampleapp {
+    width: 500px;
     height: auto;
-    margin-right: 40px;
-    padding-left: 10px;
-}
-
-div#about h2,
-div#news h2 {
-    margin-top: 20px;
+    border: 1px solid black;
+    padding-top: 15px;
+    padding-left: 15px;
     margin-bottom: 20px;
-    font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    font-weight: 100;
-    line-height: 60px;
-    color: #505050;
-    letter-spacing: 0.1em;
-    padding-left: 60px;
 }
 
-div#about h2 {
-    background: url("../images/icon/home.png") no-repeat;
-    background-position: 0 30%;
-    background-size: 10%;
+div.sampleapp label {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
 }
 
-.messages {
-    line-height: 2;
-    color: #555;
-    font-size: 15px;
+div.sampleapp input,
+div.sampleapp textarea {
+    width: 200px;
 }
 
-div#about ul li {
-    list-style: disc;
-    list-style-position: inside;
-}
-
-
-/* ******************************
-news 
-******************************* */
-
-#news {
-    width: 50%;
-    height: 500px;
-}
-
-div#news h2 {
-    background: url("../images/icon/whatsnew.png") no-repeat;
-    background-position: 0 30%;
-    background-size: 10%;
-}
-
-div#news ul {
-    width: auto;
-    height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-div#news ul li {
-    font-size: 13px;
-    color: #555;
-    border-bottom: 1px dotted #928e8a;
-    line-height: 32px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    display: flex;
-}
-
-div#news ul li div.date {
-    min-width: 80px;
-    font-size: 13px;
-    color: #333;
-}
-
-div#news ul li div.messages {
-    padding-right: 10px;
-}
-
-
-/* ******************************
-footer 
-******************************* */
-
-footer {
-    width: 100%;
+div.sampleapp textarea {
     height: 100px;
-    margin: 80px auto 0 auto;
-    border-top: 1px solid #505050;
-    box-shadow: 0 -px 3px -3px #505050;
 }
 
-footer p {
-    padding-top: 10px;
+div#tasks_js,
+div#tasks_jq {
+    margin-top: 50px;
+}
+
+div.sampleapp table {
+    margin-bottom: 30px;
+}
+
+div.sampleapp table th {
+    width: 150px;
+}
+
+div.sampleapp table td {
     text-align: center;
+}
+
+div.sampleapp ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+div.sampleapp ul div.row {
+    display: flex;
+    text-align: center;
+}
+
+div.sampleapp ul div.row li {
+    list-style: none;
+    width: 150px;
+    border: 1px solid black;
 }
