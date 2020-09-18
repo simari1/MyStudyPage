@@ -112,5 +112,6 @@ div.sampleapp ul div.row {
 div.sampleapp ul div.row li {
     list-style: none;
     width: 150px;
+    height: 30px;
     border: 1px solid black;
 }

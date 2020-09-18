@@ -6,34 +6,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href=" https://unpkg.com/sanitize.css " rel="stylesheet " />
+    <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>ToDoアプリ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //共通パーツ読み込み
+        $(function() {
+            $("header").load("../../View/Common/header.html");
+            $("footer").load("../../View/Common/footer.html");
+        });
+    </script>
 </head>
 
 <body>
+    <header>
+
+    </header>
     <div id="sampleapp_wrapper">
         <h1>ToDoアプリを作ります</h1>
-        <ul>
-            <li>ソースはこちら<a href="# ">GitHub</a></li>
-            <li>
-                <ul>
-                    参考リンク（javascript）
-                    <li><a href="https://techacademy.jp/magazine/28581">Tableに行追加、削除</a></li>
-                    <li><a href="https://www.tairax.com/entry/study/JavaScript/getElementById-createElement">createElement、getElement</a></li>
-                    <li><a href="https://lab.syncer.jp/Web/JavaScript/Snippet/76/">classの操作</a></li>
-                    <li><a href="https://stackoverflow.com/questions/11751111/removing-li-elements-from-ul">addEventListenerと引数e、e.targetからparentNodeを取得する</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                    参考リンク（jquery）
-                    <li><a href="https://techacademy.jp/magazine/28581">Tableに行追加、削除</a></li>
-                    <li><a href="https://www.tairax.com/entry/study/JavaScript/getElementById-createElement">createElement、getElement</a></li>
-                    <li><a href="https://lab.syncer.jp/Web/JavaScript/Snippet/76/">classの操作</a></li>
-                    <li><a href="https://stackoverflow.com/questions/11751111/removing-li-elements-from-ul">addEventListenerと引数e、e.targetからparentNodeを取得する</a></li>
-                </ul>
-            </li>
-        </ul>
+        <p>ソースはこちら<a href="# ">GitHub</a></p>
 
         <div class="sampleapp">
             <p>javascript版</p>
@@ -71,6 +64,7 @@
                         <li>タイトル</li>
                         <li>メモ</li>
                         <li>削除</li>
+
                     </div>
                 </ul>
             </div>
@@ -84,7 +78,7 @@
             </div>
             <div>
                 <label for="title">タイトル</label>
-                <input type="text" id="title_jjq" name="title">
+                <input type="text" id="title_jq" name="title">
             </div>
             <div>
                 <label for="memo">メモ</label>
@@ -106,7 +100,10 @@
             </div>
         </div>
     </div>
+    <footer>
+    </footer>
     <script src="../../js/Learn/todo_js.js"></script>
+    <script src="../../js/Learn/todo_jq.js"></script>
 </body>
 
 </html>
