@@ -32,7 +32,7 @@ document.getElementById("button_js").onclick = function() {
     var li = document.createElement('li');
     var button = document.createElement('button');
     var text = document.createTextNode("削除");
-    button.appendChild(text)
+    button.appendChild(text);
 
     //削除用ロジックを紐付け
     button.addEventListener("click", removeli, false);
