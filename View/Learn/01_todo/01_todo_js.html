@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=" https://unpkg.com/sanitize.css " rel="stylesheet " />
+    <link rel="stylesheet" href="../../../css/destyle.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>ToDoアプリ</title>
+    <script>
+        //共通パーツ読み込み
+        $(function() {
+            $("header").load("../../../View/Common/header.html");
+            $("footer").load("../../../View/Common/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <div id="sampleapp_wrapper">
+        <h2>ToDoアプリを作ります</h2>
+
+        <div class="sampleapp">
+            <h3>javascript版</h3>
+            <div>
+                <label for="name">名前</label>
+                <input type="text" id="name_js" name="name">
+            </div>
+            <div>
+                <label for="title">タイトル</label>
+                <input type="text" id="title_js" name="title">
+            </div>
+            <div>
+                <label for="memo">メモ</label>
+                <textarea id="memo_js" name="memo"></textarea>
+            </div>
+            <button id="button_js">追加</button>
+
+            <div id="tasks_js">
+                <p>tableでやる版</p>
+                <table id="table_js" border="1">
+                    <tr>
+                        <th>No</th>
+                        <th>名前</th>
+                        <th>タイトル</th>
+                        <th>メモ</th>
+                        <th>削除</th>
+                    </tr>
+                </table>
+
+                <p>ulでやる版</p>
+                <ul id="ul_js">
+                    <div class="row">
+                        <li>No</li>
+                        <li>名前</li>
+                        <li>タイトル</li>
+                        <li>メモ</li>
+                        <li>削除</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+    <script src="../../../Src/Learn/01_todo/todo_js.js"></script>
+</body>
+
+</html>

@@ -2,6 +2,18 @@
 learn.html
 ******************************* */
 
+body h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 20px 15px;
+}
+
+body h3 {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 10px 5px;
+}
+
 
 /* ******************************
 wrapper
@@ -30,8 +42,6 @@ div#main ul {
 }
 
 div#main ul>li.first_child a {
-    font-size: 25px;
-    font-weight: bold;
     margin-bottom: 30px;
     text-decoration: underline;
 }
@@ -61,9 +71,8 @@ div.sampleapp {
     width: 500px;
     height: auto;
     border: 1px solid black;
-    padding-top: 15px;
-    padding-left: 15px;
-    margin-bottom: 20px;
+    padding: 15px;
+    margin: 20px 0;
 }
 
 div.sampleapp label {
@@ -75,22 +84,36 @@ div.sampleapp label {
 div.sampleapp input,
 div.sampleapp textarea {
     width: 200px;
+    border: 1px solid #333;
+    margin: 3px 0;
 }
 
 div.sampleapp textarea {
     height: 100px;
 }
 
-div#tasks_js,
-div#tasks_jq {
+div.sampleapp button {
+    height: 30px;
+    border: 1px solid #333;
+    background-color: #ddd;
+    line-height: 30px;
+    padding: 0 5px;
+}
+
+div.sampleapp div#tasks_js,
+div.sampleapp div#tasks_jq,
+div.sampleapp div#tasks_vjs {
     margin-top: 50px;
 }
 
 div.sampleapp table {
     margin-bottom: 30px;
+    border: 1px solid #333;
 }
 
 div.sampleapp table th {
+    text-align: center;
+    line-height: 30px;
     width: 150px;
 }
 
@@ -107,11 +130,14 @@ div.sampleapp ul {
 div.sampleapp ul div.row {
     display: flex;
     text-align: center;
+    height: 30px;
 }
 
 div.sampleapp ul div.row li {
     list-style: none;
     width: 150px;
     height: 30px;
+    line-height: 30px;
     border: 1px solid black;
+    box-sizing: content-box;
 }
