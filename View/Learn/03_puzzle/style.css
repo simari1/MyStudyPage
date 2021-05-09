@@ -1,0 +1,12 @@
+table td{
+    border: 1px solid #222;
+    height: 60px;
+    width: 50px;
+    border-radius: 3px;
+    box-shadow: rgb(128, 128, 128) 5px 5px;
+    text-align: center;
+}
+
+table {
+    border-spacing: 10px;
+}
