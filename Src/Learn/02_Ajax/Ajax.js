@@ -10,7 +10,7 @@ $("#sample1").on("click", function(){
 });
 
 $("#sample2").on("click", function(){
-  let baseApi = "http://api.openweathermap.org/data/2.5/weather";
+  let baseApi = "https://api.openweathermap.org/data/2.5/weather";
   let appId = "85f8f77814397193df652bb495ed6214"
   let city = $("#city").val();
   let urlWeather = baseApi + "?appid=" + appId + "&q=" + city;
