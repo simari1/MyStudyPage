@@ -141,3 +141,21 @@ div.sampleapp ul div.row li {
     border: 1px solid black;
     box-sizing: content-box;
 }
+
+button{
+    height: 30px;
+    border: 1px solid #333;
+    background-color: #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+div.example{
+    margin-bottom: 20px;
+}
+
+input{
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    display: block;
+}
