@@ -20,7 +20,7 @@ $("#sample2").on("click", function(){
     function(data){
       $("#result_sample2").html(
         "現在の天気：" + data.weather[0].main + "<br>" +
-        "現在の気温：" + data.main.feels_like);
+        "現在の気温：" + data.main.temp);
     }
   )
 });
