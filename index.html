@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
         //共通パーツ読み込み
         $(function () {
@@ -19,15 +21,14 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
     </header>
-
     <div class="container">
-        <div id="main_image">
-            <img src="./Image/mainimage.png" alt="">
-        </div>
-        <div id="container_wrapper">
-            <div id="about" class="box_title">
+        <div id="container_wrapper" class="row">
+            <div id="main_image" class="row">
+                <img src="/Image/mainimage.png">
+            </div>
+            <div id="about" class="box_title col-md-6">
                 <h2>About this page</h2>
                 <div class="messages">
                     このページは主に私の勉強用の情報を掲載するために作成しました。初HPです。以下の様なものを掲載していけたらいいなと思っています。<br>
@@ -40,7 +41,7 @@
                 </ul>
                 </p>
             </div>
-            <div id="news">
+            <div id="news" class="col-md-6">
                 <h2>What's new</h2>
                 <ul>
                     <li>
@@ -66,11 +67,8 @@
                 </ul>
             </div>
         </div>
-        <div id="blog"></div>
     </div>
     <footer>
-
     </footer>
 </body>
-
 </html>

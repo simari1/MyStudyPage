@@ -1,117 +1,94 @@
 /* ******************************
-index.html
-******************************* */
-
-
-/* ******************************
 mainimage
 ******************************* */
-
-#main_image {
-    width: 100%;
-    height: 260px;
-    margin-bottom: 80px;
-    text-align: center;
-}
-
 #main_image img {
-    width: 960px;
-    height: 260px;
+  width: 100vw;
 }
-
 
 /* ******************************
 container_wrapper 
 ******************************* */
 
 #container_wrapper {
-    width: 960px;
-    height: 500px;
-    display: flex;
-    margin: 0 auto;
+  margin: 0 auto;
 }
-
 
 /* ******************************
 about 
 ******************************* */
-
 #about {
-    width: 50%;
-    height: auto;
-    margin-right: 40px;
-    padding-left: 10px;
+  height: auto;
+  padding-left: 10px;
 }
 
 div#about h2,
 div#news h2 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    font-weight: 100;
-    line-height: 60px;
-    color: #505050;
-    letter-spacing: 0.1em;
-    padding-left: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+  font-weight: 100;
+  line-height: 60px;
+  color: #505050;
+  letter-spacing: 0.1em;
+  padding-left: 60px;
 }
 
 div#about h2 {
-    background: url("../images/icon/home.png") no-repeat;
-    background-position: 0 30%;
-    background-size: 10%;
+  background: url("/Image/icon/home.png") no-repeat;
+  background-position: 0 30%;
+  background-size: 10%;
+  background-size: contain;
 }
 
 .messages {
-    line-height: 2;
-    color: #555;
-    font-size: 15px;
+  line-height: 2;
+  color: #555;
+  font-size: 15px;
 }
 
 div#about ul li {
-    list-style: disc;
-    list-style-position: inside;
+  list-style: disc;
+  list-style-position: inside;
 }
-
 
 /* ******************************
 news 
 ******************************* */
 
 #news {
-    width: 50%;
-    height: 500px;
+  height: 500px;
 }
 
 div#news h2 {
-    background: url("../images/icon/whatsnew.png") no-repeat;
-    background-position: 0 30%;
-    background-size: 10%;
+  background: url("/Image/icon/whatsnew.png") no-repeat;
+  background-position: 0 30%;
+  background-size: 10%;
+  background-size: contain;
 }
 
 div#news ul {
-    width: auto;
-    height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
+  width: auto;
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 div#news ul li {
-    font-size: 13px;
-    color: #555;
-    border-bottom: 1px dotted #928e8a;
-    line-height: 32px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    display: flex;
+  font-size: 13px;
+  color: #555;
+  border-bottom: 1px dotted #928e8a;
+  line-height: 32px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 div#news ul li div.date {
-    min-width: 80px;
-    font-size: 13px;
-    color: #333;
+  min-width: 80px;
+  font-size: 13px;
+  color: #333;
 }
 
 div#news ul li div.messages {
-    padding-right: 10px;
+  padding-right: 10px;
 }

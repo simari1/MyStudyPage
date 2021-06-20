@@ -1,80 +1,72 @@
 body {
-    background-color: #fff;
-    font-family: "メイリオ", Meiryo;
+  background-color: #fff;
+  font-family: "メイリオ", Meiryo;
 }
-
 
 /* ******************************
 header 
 ******************************* */
 
 header {
-    margin-top: 0!important;
-    width: 100%;
-    height: 200px;
-    background-color: #fff;
-    border-bottom: 1px solid #505050;
-    box-shadow: 0 3px 3px -3px #505050;
+  margin-top: 0 !important;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border-bottom: 1px solid #505050;
+  box-shadow: 0 3px 3px -3px #505050;
 }
-
-div#header_inner {
-    width: 960px;
-    height: 200px;
-    background-color: #fff;
-    margin: 0 auto;
-    border-bottom: 1px solid #505050;
-}
-
 div#header_inner h1 {
-    font-family: 'Lato', sans-serif;
-    /* font-weight: bold; */
-    letter-spacing: 0.1em;
-    color: #333;
+  font-family: "Lato", sans-serif;
+  color: #333;
 }
 
-div#header_inner nav {
-    float: right;
+div.container-fluid {
+  background-color: #fff;
 }
-
-div#header_inner div {
-    width: auto;
-    height: 150px;
-    display: table-cell;
-    vertical-align: middle;
+.navbar-light .navbar-toggler {
+  height: 50px;
 }
-
-div nav ul {
-    display: flex;
+a.dropdown-item {
+  color: rgba(0, 0, 0, 0.55);
 }
-
-div nav ul li a {
-    margin-left: 20px;
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    color: #333;
+@media screen and (max-width: 575px) {
+  div .navbar-collapse {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    padding-left: 20px;
+  }
 }
-
-div nav ul li a:hover {
-    text-decoration: underline;
+a.nav-link:hover,
+a.dropdown-item:hover {
+  font-weight: 600;
+  background-color: #eee;
 }
-
 
 /* ******************************
 footer 
 ******************************* */
-
-footer {
-    width: 100%;
-    height: 100px;
-    margin: 80px auto 0 auto;
-    border-top: 1px solid #505050;
-    box-shadow: 0 1px 3px -3px #505050;
+/* Sticky footer styles
+-------------------------------------------------- */
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+  margin-bottom: -250px; /*フッターの高さと等しいネガティブマージン*/
 }
 
-footer p {
-    padding-top: 10px;
-    text-align: center;
+/* Custom page CSS
+    -------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+.container {
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
 }
