@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Ahead 👀</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <legend>今回の気づき：</legend>
+      <p>
+        ・Jsonの取得にはJQueryを使わないのであればFetchを使える。
+        <div>
+          <a href="https://designsupply-web.com/media/knowledgeside/4649/">https://designsupply-web.com/media/knowledgeside/4649/</a>
+        </div>
+      </p>
+      <p>
+        ・動的に作成されたulの中のliに対してclick eventを付与したいのであれば、ulをハンドリングしてしまうのがメモリ効率からもよい。
+        <pre>
+          <code>
+            $("ul").on("click", "li", function (e) {
+              $("input.search").val($(this).children()[0].textContent);
+            });
+          </code>
+        </pre>
+        <p>
+          ・Jsonの取得にはJQueryを使わないのであればFetchを使える。
+          <div>
+            <a href="https://stackoverflow.com/questions/19091299/using-jquery-to-click-a-li-element">https://stackoverflow.com/questions/19091299/using-jquery-to-click-a-li-element</a>
+          </div>
+        </p>
+        <p>
+          ・複数のJsonを配列に詰めるにはSpread(foreachではない)
+          <div>
+            <a href="https://qiita.com/akisx/items/682a4283c13fe336c547">https://qiita.com/akisx/items/682a4283c13fe336c547</a>
+          </div>
+        </p>
+      </p>
+    </div>
+
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State" />
+      <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </form>
+    
+    <script>
+      $(document).ready(function () {
+        const endpoint = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+        let cities = [];
+        let typeAhead = [];
+        $(".suggestions").empty();
+
+        $.getJSON(endpoint, function (data) {
+          cities.push(...data);
+        });
+
+        $("ul").on("click", "li", function (e) {
+          $("input.search").val($(this).children()[0].textContent);
+        });
+
+        $("input.search").on("input", function (e) {
+          $(".suggestions").empty();
+          typeAhead = [];
+
+          let inputVal = $(this).val();
+          if (!inputVal) {
+            $(".suggestions").empty();
+            return;
+          }
+
+          typeAhead = cities.filter(city => city.city.toLowerCase().
+                                              includes(inputVal.toLowerCase())
+                                    );
+
+          const regex = new RegExp(inputVal, "gi");
+          $.each(typeAhead, function (i, item) {
+            let styledCity = item.city.replace(regex, `<span class="hl">${inputVal}</span>`)
+            let appendables =
+            `
+            <li>
+              <span class="name">${styledCity}, ${item.state}</span>
+              <span class="population">${item.population}</span>
+            </li>
+            `;
+
+            $(".suggestions").append(appendables);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
