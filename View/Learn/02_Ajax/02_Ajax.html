@@ -1,50 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href=" https://unpkg.com/sanitize.css " rel="stylesheet " />
-    <link rel="stylesheet" href="../../../css/destyle.css">
-    <link rel="stylesheet" href="../../../css/common.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/destyle.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Ajax</title>
-    <script>
-        //共通パーツ読み込み
-        $(function() {
-            $("header").load("../../../View/Common/header.html");
-            $("footer").load("../../../View/Common/footer.html");
-        });
-    </script>
-</head>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+  </head>
 
-<body>
-    <header>
-
-    </header>
+  <body>
     <div id="sampleapp_wrapper">
-        <h2>Ajaxで非同期呼び出しをします</h2>
+      <h2>Ajaxで非同期呼び出しをします</h2>
 
-        <div class="example">
-            <button id="sample1">サンプル1 Click</button>
-            <div id="result_sample1">
-                結果がここに表示されます
-            </div>
-        </div>
-        
-        <div class="example">
-            <button id="sample2">サンプル2 現在の都市の天気をOpenWeatherMapから取得</button>
-            <input id="city" type="text" value="Tokyo">
-            <div id="result_sample2">
-                結果がここに表示されます
-            </div>
-        </div>
+      <div class="example">
+        <button id="sample1">サンプル1 Click</button>
+        <div id="result_sample1">結果がここに表示されます</div>
+      </div>
+
+      <div class="example">
+        <button id="sample2">
+          サンプル2 現在の都市の天気をOpenWeatherMapから取得
+        </button>
+        <input id="city" type="text" value="Tokyo" />
+        <div id="result_sample2">結果がここに表示されます</div>
+      </div>
     </div>
-    <footer>
-    </footer>
-    <script src="../../../Src/Learn/02_Ajax/Ajax.js"></script>
-</body>
-
+    <script src="Ajax.js"></script>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-var num = 0;
+                                        var num = 0;
 $("#button_jq").on("click", function() {
     num++;
     var name = $("#name_jq").val();
