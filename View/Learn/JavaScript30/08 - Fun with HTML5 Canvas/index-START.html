@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- 
+  jQuery要素からDOM要素を取得する方法[0]もしくはget(0)
+  https://tnomura9.exblog.jp/12624562/ -->
+
+  <canvas id="draw" width="800" height="800"></canvas>
+
+  <script>
+    $(document).ready(function () {
+      let canvas = $("#draw");
+      let ctx = canvas[0].getContext("2d");
+
+      canvas[0].width = window.innerWidth;
+      canvas[0].height = window.innerHeight;
+      canvas.css("background-color", "#EEE");
+
+      ctx.lineJoin = "round";
+      ctx.lineCap = "round";
+
+      let isDrawing = false;
+      let lastX;
+      let lastY;
+      let hue = 0;
+      let width = 0;
+      let up = true;
+
+      canvas.mousedown(function (e) {
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+      });
+      canvas.mouseup(function () {
+        isDrawing = false;
+      });
+      canvas.mouseout(function () {
+        isDrawing = false;
+      });
+      canvas.mousemove(function (e) {
+        if (!isDrawing) {
+          return
+        }
+
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx.lineWidth = width;
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+
+        // lastX = e.offsetX;
+        // lastY = e.offsetY;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+
+        hue++;
+        if (hue >= 360) {
+          hue = 0;
+        }
+        
+        if(up) {
+          width++;
+          if (width >= 50) {
+            up = false;
+          }
+        }else{
+          width--;
+          if (width <= 10) {
+            up = true;
+          }
+        }
+      });
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function getRandomWidth() {
+        return Math.floor(Math.random() * 50);
+      }
+    });
+  </script>
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+  </style>
+</body>
+
+</html>
