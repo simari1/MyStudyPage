@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    html {
+      font-family: sans-serif;
+      background: #ffc600;
+    }
+
+    .inbox {
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #F1F1F1;
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+    input:checked+p {
+      background: #F9F9F9;
+      text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      flex: 1;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #D1E2FF;
+    }
+  </style>
+  <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+  -->
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything in between should also be set to checked</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Try to do it without any libraries</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Good Luck!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Don't forget to tweet your result!</p>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+
+      let lastChecked;
+      let checkBoxes = document.querySelectorAll(".inbox input[type=checkbox]");
+
+      let inBetween = false;
+      checkBoxes.forEach(c => c.addEventListener("click", function (e) {
+        checkBoxes.forEach(c => {
+
+          if (e.shiftKey && this.checked) {
+            if (c === this || c === lastChecked) {
+              inBetween = !inBetween;
+            }
+
+            if (inBetween) {
+              c.checked = true;
+              let inBetween = false;
+            }
+          }
+        });
+        lastChecked = this;
+      }));
+
+      // let shiftPressed = false;
+      // let currentIndex = 0;
+      // let lastIndex = 0;
+      // let checkItems = [];
+      // let checkBoxes = $(".inbox input[type=checkbox]");
+
+      // $(".inbox").on("click", "input", function (e) {
+      //   currentIndex = getIndex($(this));
+
+      //   if (!shiftPressed) {
+      //     lastIndex = currentIndex;
+      //     return;
+      //   }
+
+      //   if (currentIndex > lastIndex) {
+      //     checkItems = checkBoxes.filter(function (index, element) {
+      //       return getIndex($(element)) > lastIndex && getIndex($(element)) < currentIndex;
+      //     });
+      //   } else {
+      //     checkItems = checkBoxes.filter(function (index, element) {
+      //       return getIndex($(element)) > currentIndex && getIndex($(element)) < lastIndex;
+      //     })
+      //   }
+
+      //   lastIndex = currentIndex;
+      //   $.each(checkItems, function (index, element) {
+      //     $(element).prop("checked", true);
+      //   });
+      // });
+
+      // function getIndex(item) {
+      //   return item.parent().prevAll().length + 1;
+      // }
+    });
+  </script>
+</body>
+
+</html>
