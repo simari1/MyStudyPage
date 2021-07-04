@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Video Player</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+  <link rel="stylesheet" href="/css/lessons.css" />
+</head>
+
+<body>
+  <div class="lessonLearned">
+    <legend>今回の気づき：</legend>
+    <ul>
+      <li>
+        thisと$(this)の違い
+        <div>
+          <a href="https://on-ze.com/archives/1816">https://on-ze.com/archives/1816</a>
+        </div>
+        <div>
+          <a href="https://www.flatflag.nir87.com/this-1371">https://www.flatflag.nir87.com/this-1371</a>
+        </div>
+      </li>
+      <li>
+        function() と () => {}の違い
+        <pre>
+          () => {}の中だとthisはwindowを返してくる、、、() => {}の中イベント発生元を取りたい場合はe.target
+          イベント発生元のオブジェクトを取りたい場合はfunction(){}のthisを利用する
+        </pre>
+      </li>
+      <li>
+        Jsonの取得にはJQueryを使わないのであればFetchを使える。
+        <div>
+          <a
+            href="//https://stackoverflow.com/questions/49449325/this-is-selecting-window-object-instead-of-clicked-element-jquery">//https://stackoverflow.com/questions/49449325/this-is-selecting-window-object-instead-of-clicked-element-jquery</a>
+        </div>
+        <div>
+          <a
+            href="https://qiita.com/suin/items/a44825d253d023e31e4d">https://qiita.com/suin/items/a44825d253d023e31e4d</a>
+        </div>
+        <div>
+          <a
+            href="https://keita-blog.com/programming/arrow-function">https://keita-blog.com/programming/arrow-function</a>
+        </div>
+      </li>
+      <li>
+        jQueryでDOMElementのイベントを呼ぶにはtrigger
+      </li>
+      <li>
+        data-fooの値をとるにはthis.dataset.foo
+      </li>
+    </ul>
+  </div>
+  <div class="player">
+    <video class="player__video viewer" src="652333414.mp4"></video>
+
+    <div class="player__controls">
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
+      <button class="player__button toggle" title="Toggle Play">►</button>
+      <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+      <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+      <button data-skip="-10" class="player__button">« 10s</button>
+      <button data-skip="25" class="player__button">25s »</button>
+    </div>
+  </div>
+</body>
+
+</html>
