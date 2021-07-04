@@ -1,60 +1,34 @@
 $(document).ready(function () {
-  let lastChecked;
-  let checkBoxes = document.querySelectorAll(".inbox input[type=checkbox]");
+  const sliderImages = $(".slide-in");
 
-  let inBetween = false;
-  checkBoxes.forEach((c) =>
-    c.addEventListener("click", function (e) {
-      checkBoxes.forEach((c) => {
-        console.log(c);
+  function checkSlide() {
+    console.log("called");
+    sliderImages.each(i => {
+      const slideInAt = window.scrollY + window.innerHeight - sliderImages[i].height / 2;
 
-        if (e.shiftKey && this.checked) {
-          if (c === this || c === lastChecked) {
-            inBetween = !inBetween;
-            console.log("starting to check");
-          }
-
-          if (inBetween) {
-            c.checked = true;
-            let inBetween = false;
-          }
-        }
-      });
-      lastChecked = this;
+      if ($(sliderImages[i]).offset().top < slideInAt) {
+        $(sliderImages[i]).addClass("slide-in active");
+      } else {
+        $(sliderImages[i]).removeClass("active");
+      }
     })
-  );
+  };
 
-  // let shiftPressed = false;
-  // let currentIndex = 0;
-  // let lastIndex = 0;
-  // let checkItems = [];
-  // let checkBoxes = $(".inbox input[type=checkbox]");
-
-  // $(".inbox").on("click", "input", function (e) {
-  //   currentIndex = getIndex($(this));
-
-  //   if (!shiftPressed) {
-  //     lastIndex = currentIndex;
-  //     return;
-  //   }
-
-  //   if (currentIndex > lastIndex) {
-  //     checkItems = checkBoxes.filter(function (index, element) {
-  //       return getIndex($(element)) > lastIndex && getIndex($(element)) < currentIndex;
-  //     });
-  //   } else {
-  //     checkItems = checkBoxes.filter(function (index, element) {
-  //       return getIndex($(element)) > currentIndex && getIndex($(element)) < lastIndex;
-  //     })
-  //   }
-
-  //   lastIndex = currentIndex;
-  //   $.each(checkItems, function (index, element) {
-  //     $(element).prop("checked", true);
-  //   });
-  // });
-
-  // function getIndex(item) {
-  //   return item.parent().prevAll().length + 1;
+  // function debounce(func, wait = 100, immediate = true) {
+  //   var timeout;
+  //   return function () {
+  //     var context = this,
+  //       args = arguments;
+  //     var later = function () {
+  //       timeout = null;
+  //       if (!immediate) func.apply(context, args);
+  //     };
+  //     var callNow = immediate && !timeout;
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(later, wait);
+  //     if (callNow) func.apply(context, args);
+  //   };
   // }
+
+  $(window).scroll(_.debounce(checkSlide, 100));
 });
