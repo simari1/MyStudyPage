@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Get User Media Code Along!</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/lessons.css">
+  <script src="scripts.js"></script>
+</head>
+
+<body>
+  <!-- 
+  jQuery要素からDOM要素を取得する方法[0]もしくはget(0)
+  https://tnomura9.exblog.jp/12624562/ -->
+  <!-- https://qiita.com/Futo_Horio/items/bff1ce1d2e1b219b243d -->
+  <!-- https://sgi-don.hatenablog.com/entry/2019/01/05/191016 -->
+  <!-- https://qiita.com/chelcat3/items/02c77b55d080d770530a -->
+  <!-- https://sites.google.com/site/jqueryjavascript/setintervaltoclearintervalno-shii-fang -->
+
+  <!-- jqueryでcreateElement -->
+  <!-- https://blog.toshimaru.net/jqueryhidden-inputjquery/  -->
+
+  <!-- jqueryとjavascriptの変換 -->
+  <!-- https://ginpen.com/2012/12/01/jquery-core-func/ -->
+  <!-- https://qiita.com/shshimamo/items/ba3a57a81d9780030969 -->
+  <!-- https://qiita.com/azusanakano/items/f16c3f7333be826dbcdf -->
+
+  <!-- 画像付きリンク -->
+  <!-- https://www.tagindex.com/html_tag/link/a_img.html -->
+
+  <div class="photobooth">
+    <img src="" alt="" srcset="">
+    <div class="controls">
+      <button>Take Photo</button>
+      <!--       <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" min=0 max=255 name="rmin">
+        <label for="rmax">Red Max:</label>
+        <input type="range" min=0 max=255 name="rmax">
+
+        <br>
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" min=0 max=255 name="gmin">
+        <label for="gmax">Green Max:</label>
+        <input type="range" min=0 max=255 name="gmax">
+
+        <br>
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" min=0 max=255 name="bmin">
+        <label for="bmax">Blue Max:</label>
+        <input type="range" min=0 max=255 name="bmax">
+      </div> -->
+    </div>
+
+    <canvas class="photo"></canvas>
+    <video class="player"></video>
+    <div class="strip"></div>
+  </div>
+
+  <audio class="snap" src="./snap.mp3" hidden></audio>
+</body>
+
+</html>
