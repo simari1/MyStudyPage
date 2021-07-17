@@ -3,8 +3,8 @@ $(document).ready(function () {
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
-  recognition.lang = "en-us";
-  // recognition.interimResults = true;
+  recognition.lang = "ja-jp";
+  recognition.interimResults = true;
 
   let p = $("<p editable>");
   let words = $(".words");
