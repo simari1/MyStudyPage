@@ -14,7 +14,6 @@ $(document).ready(function () {
     bar.css("height", height);
     bar.text(playbackRate.toFixed(2) + "x");
     video[0].playbackRate = playbackRate;
-    console.log(video[0].playbackRate);
   }
 
   speed.on("touchmove", handleMove)
