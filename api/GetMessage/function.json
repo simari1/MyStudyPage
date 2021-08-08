@@ -11,7 +11,7 @@
       "route": "message"
     },
     {
-      "type": "https",
+      "type": "http",
       "direction": "out",
       "name": "res"
     }
