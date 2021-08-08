@@ -26,7 +26,7 @@ $("#sample2").on("click", function () {
   });
 });
 
-$("#sample3").on("click", function () {
+$("sample3").on("click", function () {
   let url = "/api/message";
   $.ajax({
     url: url,
