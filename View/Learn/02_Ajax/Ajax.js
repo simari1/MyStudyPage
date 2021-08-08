@@ -27,7 +27,7 @@ $("#sample2").on("click", function () {
 });
 
 $("#sample3").on("click", function () {
-  let url = "api/message";
+  let url = location.origin + "/api/message";
   $.ajax({
     url: url,
     type: "get",
