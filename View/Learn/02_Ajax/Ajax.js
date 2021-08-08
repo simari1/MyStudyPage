@@ -34,6 +34,6 @@ $("#sample3").on("click", function () {
     dataType: "json",
   }).then(function (response) {
     console.log(response);
-    $("#result_sample3").val(response.text);
+    $("#FunctionVal").val(response.text);
   });
 });
