@@ -33,6 +33,7 @@ $("#sample3").on("click", function () {
     type: "get",
     dataType: "json",
   }).then(function (response) {
+    console.log(response);
     if (response.success) {
       $("#result_sample3").val(response.getJSON().text);
     }
